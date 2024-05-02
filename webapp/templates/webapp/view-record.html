@@ -1,0 +1,29 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+    <div class="card" style="padding: 20px;">
+        <strong>
+            {{record.first_name|upper}}
+            {{record.last_name}}
+        </strong>
+        <hr>
+        <div class="card-body">
+            <p><strong>ID: </strong> {{ record.id }}</p>
+            <p><strong>Email: </strong> {{ record.email }}</p>
+            <p><strong>Phone number: </strong> {{ record.phone }}</p>
+            <p><strong>Province: </strong> {{ record.province }}</p>
+            <p><strong>City: </strong> {{ record.city }}</p>
+            <p><strong>Country: </strong> {{ record.country }}</p>
+            <p><strong>Date joined: </strong> {{ record.creation_date }}</p>
+        </div>
+    </div>
+
+    <br>
+
+     <th><a class="btn btn-secondary btn-sm" href="{% url 'dashboard' %}">Return</a></th>
+     &nbsp;
+     <th><a class="btn btn-info btn-sm" href="{% url 'update-record' record.id  %}">Update record</a></th>
+     &nbsp;
+     <th><a class="btn btn-danger btn-sm" href="{% url 'delete' record.id %}">Delete</a></th>
+
+{% endblock %} 

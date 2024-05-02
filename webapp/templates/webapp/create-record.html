@@ -1,0 +1,28 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<body>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h3>Create record</h3>
+        <p>Fill the form to create new record</p>
+
+        <hr>
+        <br>
+
+        <form autocomplete="off" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+
+            <button type="submit" class="btn btn-primary w-100 btn-block p-2">Create record</button>
+        </form>
+        
+        
+
+     </div>
+    <br>
+
+</body>
+{% endblock %}
